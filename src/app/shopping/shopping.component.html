@@ -1,0 +1,22 @@
+<div class="container" *ngIf="!isloading" @fadeInOut>
+  <!-- <input type="text" [(ngModel)]="filteredText"> -->
+  <app-shopping-item *ngFor="let card of cards | filter:filteredText:'category'" [item]="card" (deletedItem)="handleDeletedItem($event)"></app-shopping-item>
+  <app-empty-shopping-cart *ngIf="shoopingItemIsEmpty"></app-empty-shopping-cart>
+</div>
+
+<div class="container" *ngIf="isloading" @fadeInOut>
+  <app-loading-card></app-loading-card>
+  <app-loading-card></app-loading-card>
+  <app-loading-card></app-loading-card>
+  <app-loading-card></app-loading-card>
+  <app-loading-card></app-loading-card>
+  <app-loading-card></app-loading-card>
+  <app-loading-card></app-loading-card>
+  <app-loading-card></app-loading-card>
+  <app-loading-card></app-loading-card>
+  <app-loading-card></app-loading-card>
+  <app-loading-card></app-loading-card>
+  <app-loading-card></app-loading-card>
+  <app-loading-card></app-loading-card>
+  <app-loading-card></app-loading-card>
+</div>

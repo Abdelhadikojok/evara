@@ -1,0 +1,298 @@
+.heading {
+  font-weight: var(--fw-600);
+  padding-block: 15px;
+  color: var(--main-color);
+}
+
+table {
+  width: 100%;
+  /* overflow-x: auto; */
+}
+
+.item-img {
+  width: 60px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+th {
+  font-size: var(--fs-7);
+  padding-block: 12px !important;
+}
+
+caption,
+th,
+td {
+  text-align: left;
+  padding: 7px;
+  height: 80px;
+}
+
+tr {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+tr:nth-of-type(2n) {
+  background-color: #d8d6d68f;
+}
+
+
+tr:nth-of-type(odd) {
+  background-color: #0075743d;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+}
+
+.counter button {
+  color: var(--main-color);
+  font-size: var(--fs-7);
+}
+
+.counter .counter-number {
+  padding: 0px 4px;
+  border: 1px solid #eee;
+  color: #999 !important;
+  font-size: var(--fs-7);
+
+}
+
+.table-container {
+  max-width: 100%;
+  overflow-x: scroll;
+  height: 100%;
+}
+
+.cart-icons {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  gap: 10px;
+  padding-right: 30px;
+  height: 100%;
+  margin-block: auto;
+
+
+}
+
+
+.cart-icons button {
+  padding: 5px;
+  background-color: #eee;
+  border-radius: 50%;
+
+}
+
+.cart-icons button ion-icon {
+  font-size: var(--fs-6);
+}
+
+.empty-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-direction: column;
+  padding-block: 30px;
+  width: 100%;
+}
+
+.empty-cart .cart-icon {
+  font-size: 15rem;
+  color: #666;
+}
+
+.empty-cart p {
+  font-size: 4rem;
+  color: var(--main-color);
+  text-transform: capitalize;
+  font-weight: var(--fw-600);
+}
+
+.search {
+  width: 100%;
+  position: relative;
+  height: 47px;
+  margin-top: 8px;
+  margin-block: 20px;
+}
+
+
+.search ion-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  color: #888;
+}
+
+.search .search-filter {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding-left: 20px;
+  padding-right: 35px;
+  outline: 0;
+  color: #666;
+
+}
+
+.search .search-filter:focus {
+  border: 1px solid var(--main-color);
+
+}
+
+.complete-shopping {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  background-color: #eee;
+  padding: 10px 20px;
+  border-radius: 3px;
+}
+
+.cart-order {
+  background-color: var(--main-color);
+  opacity: 0.9;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  margin: 20px auto;
+  border-radius: 3px;
+  color: white !important;
+  letter-spacing: 1px;
+  font-size: var(--fs-7);
+  font-weight: var(--fw-600);
+}
+
+.price,
+.totalPrice {
+  display: flex !important;
+}
+
+.delete-container {
+  width: 230px;
+  height: 160px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background-color: #eee;
+  z-index: 99999;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.delete-container .btns {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.delete-container .btns .cancel,
+.delete-container .btns .delete {
+  padding: 10px 20px;
+  background-color: #999;
+  border-radius: 5px;
+  color: white;
+}
+
+.delete-container .btns .delete {
+  background-color: rgb(255, 66, 66);
+  transition: .3s;
+}
+
+.delete-container .btns .delete:hover {
+  background-color: red;
+  transition: .3s;
+}
+
+.over-lay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
+  opacity: .8;
+  z-index: 9999;
+}
+
+
+
+
+@media (max-width : 650px) {
+  td {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 10ch auto;
+    padding: 10px;
+    padding-inline: 20px;
+    height: 50px;
+  }
+
+  th {
+    display: none;
+  }
+
+  td:not(:last-child)::before {
+    content: attr(data-cell) ' : ';
+    font-weight: var(--fw-600);
+    text-transform: capitalize;
+  }
+
+  tr {
+    padding: 30px 10px;
+  }
+
+  td[data-cell="item"] {
+    display: flex;
+  }
+
+  td[data-cell="item"] a {
+    text-decoration: underline;
+    color: blue !important;
+  }
+
+  .item-img {
+    width: 30px;
+  }
+
+  .delete-container {
+    width: 200;
+    height: 150;
+  }
+
+
+
+  .cart-icons {
+    justify-content: left;
+  }
+}
+
+@media (max-width : 350px) {
+
+
+  .delete-container {
+    width: 150;
+    height: 100;
+  }
+
+  .cart-order {
+    font-size: var(--fs-8);
+    height: 40px;
+  }
+
+
+}

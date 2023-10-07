@@ -1,0 +1,101 @@
+.card {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  width: 280px;
+  border-radius: 10px;
+  position: relative;
+  padding: 10px;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+
+}
+
+
+:host>>>.custom-class-first .skeleton-loader {
+  height: 200px;
+}
+
+:host>>>.custom-class-last .skeleton-loader {
+  width: 100px;
+}
+
+:host>>>.custom-class-circle .skeleton-loader {
+  width: 10px;
+  height: 10px;
+}
+
+
+.images {
+  width: 100%;
+  position: relative;
+  min-height: 200px;
+
+}
+
+
+.card-content {
+  position: relative;
+}
+
+.card-content .name {
+  color: #999;
+  position: relative;
+}
+
+
+
+
+.card-content .cart-icon {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0px;
+  right: 0px;
+
+}
+
+.card-content .price {
+  color: var(--main-color);
+  font-size: var(--fs-6);
+  font-weight: var(--fs-700);
+}
+
+
+@media screen and (max-width: 1050px) {
+  .card {
+    max-width: 270px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .card {
+    max-width: 250px;
+  }
+}
+
+@media screen and (max-width: 890px) {
+  .card {
+    max-width: 250px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .card {
+    max-width: 230px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .card {
+    max-width: 210px;
+  }
+
+}

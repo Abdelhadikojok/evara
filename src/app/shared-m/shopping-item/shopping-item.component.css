@@ -1,0 +1,195 @@
+.card {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 10px;
+  width: 280px;
+  border-radius: 10px;
+  position: relative;
+
+}
+
+.sold-out {
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-8);
+  background-color: rgb(248, 124, 124);
+  position: absolute;
+  z-index: 99;
+  top: 10px;
+  left: 10px;
+  margin: 4px;
+  border-radius: 4px;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+
+}
+
+.images {
+  width: 100%;
+  position: relative;
+  min-height: 200px;
+
+}
+
+.images img:nth-child(1) {
+  transition: .3s;
+}
+
+.images img:nth-child(2) {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -22;
+  transition: 0.3s;
+
+}
+
+.images-icons {
+  display: flex;
+  gap: 5px;
+  position: absolute;
+  top: 150%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s;
+  opacity: 0;
+}
+
+.images-icons a,
+.images-icons button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgb(236, 255, 250);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* cursor: pointer; */
+}
+
+
+.card:hover .images-icons {
+  top: 50%;
+  opacity: 1;
+  transition: 0.3s;
+
+}
+
+.card:hover .images img:nth-child(1) {
+  opacity: 0;
+  transition: 0.3;
+
+}
+
+.card:hover .images img:nth-child(2) {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+.card-content {
+  position: relative;
+}
+
+.card-content .name {
+  color: #999;
+  padding-block: 10px;
+  position: relative;
+}
+
+/*
+white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; */
+
+.card-content .item-description {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.5rem;
+  padding-block: 10px;
+  text-transform: capitalize;
+  font-weight: var(--fw-600);
+}
+
+.card-content .rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding-block: 10px;
+
+}
+
+.card-content .rating ion-icon {
+  color: rgba(252, 225, 75, 0.822);
+
+}
+
+
+.card-content .cart-icon {
+  position: absolute;
+  background-color: rgb(236, 255, 250);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0px;
+  right: 0px;
+
+}
+
+.card-content .cart-icon ion-icon {
+  font-size: var(--fs-7);
+  font-weight: 600;
+}
+
+.card-content .price {
+  color: var(--main-color);
+  font-size: var(--fs-6);
+  font-weight: var(--fs-700);
+}
+
+
+
+.cart-icon {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1050px) {
+  .card {
+    max-width: 270px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .card {
+    max-width: 250px;
+  }
+}
+
+@media screen and (max-width: 890px) {
+  .card {
+    max-width: 250px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .card {
+    max-width: 230px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .card {
+    max-width: 210px;
+  }
+
+}

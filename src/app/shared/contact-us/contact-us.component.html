@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="special-heading" style="padding-bottom: 30px; margin: 0 auto; width: fit-content;">
+    <b>CONTACT </b><span><b>US</b></span>
+  </div>
+  <form (ngSubmit)="submitForm(contactForm)" #contactForm="ngForm" class="contact-form">
+    <div class="loading-spinner" *ngIf="isloading">
+      <app-loading-spinner></app-loading-spinner>
+    </div>
+    <ng-container  *ngIf="!isloading">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" [(ngModel)]="formData.name" required #name="ngModel">
+      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="error-message">
+        Name is required.
+      </div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" [(ngModel)]="formData.email" required #email="ngModel">
+      <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error-message">
+        <ng-container *ngIf="email.errors?.['required']">Email is required.</ng-container>
+        <ng-container *ngIf="email.errors?.['email']">Invalid email format.</ng-container>
+      </div>
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" [(ngModel)]="formData.message" rows="4" required #message="ngModel"></textarea>
+      <div *ngIf="message.invalid && (message.dirty || message.touched)" class="error-message">
+        Message is required.
+      </div>
+      <button type="submit" [disabled]="contactForm.invalid" class="submit-button">Submit</button>
+      <div class="whatsapp">
+        <p>or contact us here on</p>
+        <a href="https://api.whatsapp.com/send?phone=81230893" target="_blank">whatsapp!!<ion-icon name="logo-whatsapp"></ion-icon></a>
+      </div>
+    </ng-container>
+  </form>
+
+
+</div>

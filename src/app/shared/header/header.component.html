@@ -1,0 +1,54 @@
+<header>
+  <div class="reative-overlay"></div>
+  <div class="container header">
+    <div class="left">
+      <div class="logo" (click)="navigateToHome()" style="cursor: pointer;">
+        <img src="../../../assets/logo.svg " alt="shop logo">
+
+      </div>
+      <ul class="header-links-container" [ngClass]="toggle ? 'active' : 'not-active' ">
+        <li class="header-link"><a routerLink="/home" [routerLinkActive]="'active'"  (click)="changeToggleValue()">Home</a></li>
+        <li class="header-link"><a routerLink="/shopping" [routerLinkActive]="'active'" (click)="changeToggleValue()">Shop</a></li>
+        <li class="header-link"><a routerLink="/cart" [routerLinkActive]="'active'" (click)="changeToggleValue()">MyCart</a></li>
+        <li class="header-link" *ngIf="!isLoggedIn"><a routerLink="/auth/login" [routerLinkActive]="'active'" (click)="changeToggleValue()">Login</a></li>
+        <li class="header-link" *ngIf="isLoggedIn"><button (click)="logOut();changeToggleValue()">LogOut</button></li>
+        <button class="close-menue-icon" (click)="changeToggleValue()"><ion-icon name="close-outline"></ion-icon></button>
+      </ul>
+
+    </div>
+    <div class="right">
+      <ul class="options">
+      <!-- what is the meaning of vertuial web base -->
+        <li>
+          <div class="search">
+            <input type="text" placeholder="Search For Items..." class="search-filter" [(ngModel)]="filterInputVlaue" (input)="ss()">
+            <ion-icon name="search-outline"></ion-icon>
+          </div>
+        </li>
+        <li>
+          <a routerLink="/shopping/favorite-item">
+            <ion-icon name="heart-outline" class="likes-icon"></ion-icon>
+          </a>
+        </li>
+        <li class="cart" clickOutside (clickOutside)="clickedOutside()" >
+          <a>
+            <button (click)="toggleMenu()"><ion-icon name="cart-outline" class="cart-icon"></ion-icon></button>
+            <span class="cart-item-counter">{{cart_NbOfItems}}</span>
+          </a>
+
+          <!-- cart header details -->
+          <div class="cart-items-container">
+             <app-cart-menue  *ngIf="isMenuOpened" (toggleCart)="toggleCart($event)"></app-cart-menue>
+          </div>
+        </li>
+        <li>
+          <button (click)="nvaigateTo()">
+            <ion-icon name="person-circle-outline" class="likes-icon"></ion-icon>
+          </button>
+        </li>
+        <li class="menue-icon"><button (click)="changeToggleValue()"><ion-icon name="menu-outline"></ion-icon></button></li>
+      </ul>
+    </div>
+
+  </div>
+</header>

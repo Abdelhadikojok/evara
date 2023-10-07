@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="details-container">
+    <div class="images">
+      <div class="hero-image">
+        <img src="{{item.images.imageOne}}" alt="">
+      </div>
+      <div class="more-images">
+        <img src="{{item.images.imageOne}}" alt="">
+        <img src="{{item.images.imageTwo}}" alt="">
+        <img src="{{item.images.imageOne}}" alt="">
+      </div>
+    </div>
+    <div class="details">
+      <div class="heading">
+        <h1>{{item.name}}</h1>
+        <p class="brand-name">Brand : <span> {{item.brand}}</span></p>
+      </div>
+      <div class="price">
+        <p><i>$</i>{{item.price}}</p>
+      </div>
+      <div class="description">
+        <p>{{item.description}}</p>
+        <div class="order-info">
+          <p><ion-icon name="diamond-sharp"></ion-icon> 1 Year Aljazeera Warrantly</p>
+          <p><ion-icon name="card-outline"></ion-icon> Cash On Delivery Available</p>
+          <p><ion-icon name="refresh-sharp"></ion-icon> 30 Day Return Policy</p>
+        </div>
+      </div>
+      <div class="rating">
+        <p>rating : </p>
+        <div class="rating-stars">
+          <button *ngFor="let star of rating"><ion-icon name='star{{star.name}}' (mouseenter)="onMouseEnter(star.index)" (mouseleave)="onMouseLeave(star.index)" (click)="addRatting(star.index)"></ion-icon></button>
+        </div>
+      </div>
+
+      <div class="add-to-cart">
+        <input type="number" class="nb-of-item" placeholder="1" style="padding-left: 3px;"  [(ngModel)]="singleItemCount">
+        <div class="buttons">
+          <button (click)="addToCart(item)">Add To Cart</button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>

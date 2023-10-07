@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="form-container">
+    <h1>Authentication Form</h1>
+  <div class="loading-spinner" *ngIf="isloading">
+    <app-loading-spinner></app-loading-spinner>
+  </div>
+  <div class="error" *ngIf="error">
+    {{error}}
+  </div>
+  <div class="form" *ngIf="!isloading && !islogedIn">
+    <form #authForm="ngForm" (ngSubmit)="submitForm(authForm)">
+      <div class="form-group text">
+        <input type="email" id="email"
+          name="email"
+          ngModel
+          required
+          email
+          pattern="[^ @]*@[^ @]*"
+          (click)="removeError()"
+          #email="ngModel">
+        <label for="email" >Email</label>
+      </div>
+      <div class="error" *ngIf="email.errors && email.touched">
+        <p *ngIf="email.errors['required']"><ion-icon name="alert-circle-outline"></ion-icon>Email is required</p>
+			  <p *ngIf="email.errors['pattern']"><ion-icon name="alert-circle-outline"></ion-icon>Email must contain at least the @ character</p>
+      </div>
+
+      <div class="form-group text">
+        <input type="password"
+        id="password"
+        name="password"
+        ngModel
+        required
+        minlength="6"
+        #password="ngModel">
+        <label for="password">Password</label>
+      </div>
+
+      <div class="error"
+		     *ngIf="password.errors && (password.touched)">
+			  <p *ngIf="password.errors['required']"><ion-icon name="alert-circle-outline"></ion-icon>Password is required</p>
+			  <p *ngIf="password.errors['minlength']"><ion-icon name="alert-circle-outline"></ion-icon>Password must be at least 6 characters long</p>
+		  </div>
+
+      <div class="buttons">
+        <button type="submit" class="submit" [disabled]="!authForm.valid" style="margin-bottom: 10px;">logIn</button>
+      </div>
+      </form>
+    </div>
+    <br>
+    <br>
+    <p style="display: flex; gap: 5px; font-size: var(--fs-8);">
+      you dont have account ?
+      <a routerLink="/auth/signup" style="text-decoration: underline; color: blue !important;"> signup</a>
+    </p>
+    <br>
+
+</div>
+</div>

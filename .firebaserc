@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "abdelhadi-ecommerce-app"
+  },
+  "targets": {
+    "abdelhadi-ecommerce-app": {
+      "hosting": {
+        "Ecommerce": [
+          "abdelhadi-ecommerce-app"
+        ]
+      }
+    }
+  }
+}

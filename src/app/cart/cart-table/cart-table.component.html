@@ -1,0 +1,56 @@
+<div class="container">
+  <h1 class="heading" style="text-align: center;">My Cart</h1>
+  <div class="search">
+            <input type="text" placeholder="filter according to category" class="search-filter" [(ngModel)]="_filterTxt" (input)="onInputChange()">
+            <ion-icon name="search-outline"></ion-icon>
+          </div>
+  <div class="table-container">
+    <table>
+      <tr>
+        <th *ngFor="let row of cartTableHeaders">{{row}}</th>
+      </tr>
+      <tr *ngFor="let cartItem of filteredItems">
+        <td data-cell="item">
+          <img src="{{cartItem['images'].imageOne}}" alt="" class="item-img">
+        </td>
+        <td data-cell="name">{{cartItem.name}}</td>
+        <td data-cell="price">$ {{cartItem.price}}</td>
+        <td data-cell="quantity"><div class="counter">
+          <button (click)="decrement(cartItem)"><ion-icon name="remove-outline"></ion-icon></button>
+          <div class="counter-number">{{cartItem.singleItemCount}}</div>
+          <button (click)="increment(cartItem)"><ion-icon name="add-outline"></ion-icon></button>
+        </div></td>
+        <td data-cell="totalPrice">$ {{(cartItem.price * cartItem.singleItemCount)}}</td>
+        <td class="cart-icons">
+          <button><a href="/shopping/item-details/{{cartItem.id}}"><ion-icon name="eye-outline"></ion-icon></a></button>
+          <button (click)="changeDeleteModetoTrue(cartItem)"><ion-icon name="trash-outline"></ion-icon></button>
+        </td>
+        <!-- <td>{{cartItem.size}}</td> -->
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td >$ {{totalPrice.toFixed(2)}}</td>
+        <td></td>
+      </tr>
+    </table>
+    <div *ngIf="filteredItems.length==0" class="empty-cart">
+      <ion-icon name="cart-outline" class="cart-icon"></ion-icon>
+      <p>cart is empty</p>
+      <a routerLink="/shopping" class="complete-shopping">complete shopping</a>
+    </div>
+    <div class="order" *ngIf="filteredItems.length!=0">
+      <a routerLink="/cart/cart-order" class="cart-order">Order Now</a>
+    </div>
+  </div>
+  <div class="over-lay" *ngIf="deleteMode"></div>
+  <div class="delete-container" *ngIf="deleteMode">
+    <h3>are you sure ? </h3>
+    <div class="btns">
+      <button class="cancel" (click)="changeDeleteModetoFalse()">cancel</button>
+      <button class="delete" (click)="removeItem();changeDeleteModetoFalse()">Delete</button>
+    </div>
+  </div>
+</div>

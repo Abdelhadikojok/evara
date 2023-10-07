@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media screen and (max-width: 350px) {
+  .container {
+    padding: 30px 10px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .container {
+    padding: 30px 20px;
+  }
+}

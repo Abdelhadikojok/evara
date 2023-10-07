@@ -1,0 +1,76 @@
+<div style="display: flex; margin-block: 20px;">
+  <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)"  class="product-form" >
+    <div class="form-grou">
+      <label for="brand">Brand</label>
+      <input type="text" id="brand" name="brand" class="form-control"  #brand="ngModel" required [(ngModel)]="item.brand">
+      <div *ngIf="brand.invalid && (brand.dirty || brand.touched)" class="alert alert-danger">
+        <div *ngIf="brand.errors?.['required']">Brand is required.</div>
+      </div>
+    </div>
+
+    <div class="form-grou">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" class="form-control" required [(ngModel)]="item.name" #name="ngModel">
+      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+        <div *ngIf="name.errors?.['required']">Name is required.</div>
+      </div>
+    </div>
+
+    <div class="form-grou">
+      <label for="description">Description</label>
+      <textarea id="description" name="description" class="form-control" required [(ngModel)]="item.description" #description="ngModel"></textarea>
+      <div *ngIf="description.invalid && (description.dirty || description.touched)" class="alert alert-danger">
+        <div *ngIf="description.errors?.['required']">Description is required.</div>
+      </div>
+    </div>
+
+    <div class="form-grou">
+      <label for="price">Price</label>
+      <input type="number" id="price" name="price" class="form-control"  required [(ngModel)]="item.price" #price="ngModel">
+      <div *ngIf="price.invalid && (price.dirty || price.touched)" class="alert alert-danger">
+        <div *ngIf="price.errors?.['required']">Price is required.</div>
+      </div>
+    </div>
+
+    <div class="form-grou">
+      <label for="quantity">Quantity</label>
+      <input type="number" id="quantity" name="quantity" class="form-control"  required [(ngModel)]="item.quantity" #quantity="ngModel">
+      <div *ngIf="quantity.invalid && (quantity.dirty || quantity.touched)" class="alert alert-danger">
+        <div *ngIf="quantity.errors?.['required']">Quantity is required.</div>
+      </div>
+    </div>
+
+    <div class="form-grou">
+      <label for="category">Category</label>
+      <select id="category" name="category" value="1" class="form-control" ngModel required #category="ngModel">
+        <option *ngFor="let cat of categoriees" >{{ cat.name }}</option>
+      </select>
+      <div *ngIf="category.invalid && (category.dirty || category.touched)" class="alert alert-danger">
+        <div *ngIf="category.errors?.['required']">Category is required.</div>
+      </div>
+    </div>
+
+    <div class="form-grou" *ngIf="!updateMode">
+      <label for="images1">Upload Images1</label>
+      <input type="file" (change)="onFileChange($event)" id="images1" name="images1" class="form-control" ngModel required #images1="ngModel">
+      <div *ngIf="images1.invalid && (images1.dirty || images1.touched)" class="alert alert-danger">
+        <div *ngIf="images1.errors?.['required']">Images1 are required.</div>
+      </div>
+    </div>
+
+
+    <div class="form-grou" *ngIf="!updateMode">
+      <label for="images2">Upload Images2</label>
+      <input type="file" (change)="onFileChange2($event)" id="images2" name="images2" class="form-control" ngModel required  #images2="ngModel">
+      <div *ngIf="images2.invalid && (images2.dirty || images2.touched)" class="alert alert-danger">
+        <div *ngIf="images2.errors?.['required']">Images2 are required.</div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn" *ngIf="!updateMode" [disabled]="!productForm.valid">Submit</button>
+    <button type="submit" class="btn" *ngIf="updateMode" [disabled]="!productForm.valid">Update</button>
+  </form>
+
+  <!-- <app-shopping-item [item]="item"></app-shopping-item> -->
+
+</div>

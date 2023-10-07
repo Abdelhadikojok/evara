@@ -1,0 +1,10 @@
+
+  <div class="filtering-buttons">
+    <button *ngFor="let button of filterButtons" >{{button}}</button>
+  </div>
+  <!-- #ffe3bc -->
+  <div  class="shopping-container">
+      <app-shopping-item *ngFor="let card of cards" [item]="card" (deletedItem)="handleDeletedItem($event)"></app-shopping-item>
+  </div>
+
+

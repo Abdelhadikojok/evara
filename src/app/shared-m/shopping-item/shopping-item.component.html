@@ -1,0 +1,47 @@
+    <div class="card">
+      <div class="sold-out" *ngIf="item.quantity == 0">
+        Sold Out
+      </div>
+      <div class="image-container">
+        <div class="images">
+          <img src="{{item.images.imageOne}}" alt="">
+          <img src="{{item.images.imageTwo}}" alt="">
+        </div>
+        <div class="images-icons">
+          <a routerLink="/shopping/item-details/{{item.id}}" [text]="'view-details'" info class="info-link" >
+            <ion-icon name="eye-outline"></ion-icon>
+          </a>
+          <a (click)="addOrRemoveToFavorite(item)" [text]="'favorite'" info class="info-link" style="cursor: pointer;"  >
+            <!-- <ion-icon name="heart" *ngIf="item"></ion-icon> -->
+            <ion-icon name="heart-outline" ></ion-icon>
+          </a>
+          <button [text]="'delete'" info class="info-link" *ngIf="isAdmin" (click)="item.id && deleteItem(item.id,item)">
+            <ion-icon name="trash-outline"></ion-icon>
+          </button>
+          <button routerLink="" [text]="'update'" info class="info-link" *ngIf="isAdmin" (click)="item.id && updateItem(item.id)">
+            <ion-icon name="create-outline"></ion-icon>
+          </button>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="cart-info">
+          <span class="name">{{item.category}}</span>
+          <p class="item-description">{{item.description}}</p>
+          <span class="rating">
+            <ion-icon name="star" *ngFor="let star of filledStars"></ion-icon>
+            <ion-icon name="star-outline" *ngFor="let star of emptyStars"></ion-icon>
+            <span style="font-size: var(--fs-8); color: #999;">{{item.reviewsNb}} reviews</span>
+          </span>
+          <!-- <ngx-skeleton-loader count="1" appearance="line"></ngx-skeleton-loader> -->
+
+          <span class="price"> <i>$</i>  {{item.price}}</span>
+        </div>
+        <div class="cart-icon">
+          <a (click)="addToCart(item)" [text]="'add-to-cart'" info class="info-link">
+            <ion-icon name="bag-handle-outline"></ion-icon>
+          </a>
+        </div>
+      </div>
+
+    </div>
+

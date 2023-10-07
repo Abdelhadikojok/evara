@@ -1,0 +1,24 @@
+<div class="user-dashboard">
+  <div class="data">
+    <div class="dashboard-header">
+      <img src="https://firebasestorage.googleapis.com/v0/b/abdelhadi-ecommerce-app.appspot.com/o/avatar-1.jpg?alt=media&token=61a2ad87-31da-4df3-b316-3fd1b7398581&_gl=1*7ua44k*_ga*MTkzNzQxNDAwNS4xNjg5MzY1NTI5*_ga_CW55HF8NVT*MTY5NjYyMDgxOS4xMDAuMS4xNjk2NjIxMDQxLjU2LjAuMA.." alt="">
+      <div class="user-info">
+        <div class="name">
+          <p class="define">name : </p> <span> {{user.name.firstname}} {{user.name.lastname}}</span>
+        </div>
+        <div class="location">
+          <p class="define">location : </p>
+          <span>
+            <ion-icon name="location-outline"></ion-icon>
+            <p>
+              {{user.address.country}}
+            </p>
+          </span>
+        </div>
+
+      </div>
+    </div>
+    <app-my-orders></app-my-orders>
+  </div>
+</div>
+

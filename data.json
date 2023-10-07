@@ -1,0 +1,103 @@
+{
+  "items": [
+    {
+      "name": "adidas",
+      "description": "This Adidas shirt is made from a soft, breathable fabric that will keep you cool and comfortable all day long. It features a classic 3-Stripes design and a relaxed fit, making it perfect for everyday wear.",
+      "images": {
+        "imageOne": "https://firebasestorage.googleapis.com/v0/b/abdelhadi-ecommerce-app.appspot.com/o/product-8-1.jpg?alt=media&token=6a356636-cd5a-4465-9819-baa31c4aee0f",
+        "imageTwo": "https://firebasestorage.googleapis.com/v0/b/abdelhadi-ecommerce-app.appspot.com/o/product-8-2.jpg?alt=media&token=80fc005c-1aec-4598-abd0-696be8b68425"
+      },
+      "category": "clothes",
+      "brand": "adidas",
+      "sizes": [
+        "s",
+        "m"
+      ],
+      "reviewsNb": 6,
+      "reviewsTotal": 24,
+      "price": 15.99,
+      "likes": 3,
+      "quantity": 100,
+      "selledNb": 0,
+      "favorite": false,
+      "postDate": 1643007442
+    },
+    {
+      "name": "louis vuitton",
+      "description": "This elegant handbag is the perfect accessory for any occasion. Made from high-quality materials, it is both stylish and functional. The spacious interior can easily accommodate all of your essentials, while the stylish exterior will turn heads.",
+      "images": {
+        "imageOne": "https://firebasestorage.googleapis.com/v0/b/abdelhadi-ecommerce-app.appspot.com/o/product-13-1.jpg?alt=media&token=2b294b5a-eaa0-427b-ba74-480b19383efc",
+        "imageTwo": "https://firebasestorage.googleapis.com/v0/b/abdelhadi-ecommerce-app.appspot.com/o/showcase-img-8.jpg?alt=media&token=45f872a7-e8ad-4a7a-b528-9e8708195eff"
+      },
+      "category": "handBag",
+      "brand": "louis vuitton",
+      "sizes": [
+        "s",
+        "m"
+      ],
+      "reviewsNb": 6,
+      "reviewsTotal": 21,
+      "price": 39.99,
+      "likes": 1,
+      "quantity": 100,
+      "selledNb": 0,
+      "favorite": false,
+      "postDate": 1643007442
+    },
+    {
+      "name": "louis vuitton",
+      "description": "This classic Louis Vuitton t-shirt is a must-have for any fashion-forward wardrobe. Made from high-quality cotton, it is both comfortable and stylish. The iconic LV monogram print adds a touch of luxury, while the relaxed fit makes it perfect for everyday wear.",
+      "images": {
+        "imageOne": "https://firebasestorage.googleapis.com/v0/b/abdelhadi-ecommerce-app.appspot.com/o/product-1-1.jpg?alt=media&token=ed768a3d-a5e3-419c-ba8d-d2fc9753fe0b",
+        "imageTwo": "https://firebasestorage.googleapis.com/v0/b/abdelhadi-ecommerce-app.appspot.com/o/product-1-2.jpg?alt=media&token=02920bac-cf3e-45e6-8952-095735771ecc"
+      },
+      "category": "clothes",
+      "brand": "louis vuitton",
+      "sizes": [
+        "s",
+        "m"
+      ],
+      "reviewsNb": 10,
+      "reviewsTotal": 21,
+      "price": 29.99,
+      "likes": 1,
+      "quantity": 100,
+      "selledNb": 0,
+      "favorite": false,
+      "postDate": 1643007442
+    }
+  ],
+  "order": [
+    {
+      "id": 0,
+      "userId": 2,
+      "date": "2-2-2022",
+      "products": [
+        {
+          "productId": 1,
+          "quantity": 3
+        },
+        {
+          "productId": 2,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": 0,
+      "userId": 2,
+      "date": "2-2-2022",
+      "products": [
+        {
+          "productId": 1,
+          "quantity": 3
+        },
+        {
+          "productId": 2,
+          "quantity": 1
+        }
+      ]
+    }
+  ],
+  "users": []
+}

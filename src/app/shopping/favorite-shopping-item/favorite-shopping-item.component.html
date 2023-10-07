@@ -1,0 +1,26 @@
+<div class="container">
+  <ng-container *ngFor="let like of cards">
+    <app-shopping-item *ngFor="let item of like.items" [item]="item"></app-shopping-item>
+  </ng-container>
+  <ng-container *ngIf="!isloading">
+    <div *ngIf="cards.length==0" style="min-height: 100vh;">
+      You Dont Have Any Favorite Items
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="isloading">
+    <app-loading-card ></app-loading-card>
+    <app-loading-card ></app-loading-card>
+    <app-loading-card ></app-loading-card>
+    <app-loading-card ></app-loading-card>
+    <app-loading-card ></app-loading-card>
+    <app-loading-card ></app-loading-card>
+    <app-loading-card ></app-loading-card>
+    <app-loading-card ></app-loading-card>
+    <app-loading-card ></app-loading-card>
+    <app-loading-card ></app-loading-card>
+    <app-loading-card ></app-loading-card>
+    <app-loading-card ></app-loading-card>
+    <app-loading-card ></app-loading-card>
+  </ng-container>
+  </div>

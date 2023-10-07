@@ -1,0 +1,359 @@
+/* You can add global styles to this file, and also import other style files */
+/* @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Spartan:wght@400;500;600;700&display=swap'); */
+@import "../node_modules/alertifyjs/build/css/alertify.css";
+@import "../node_modules/alertifyjs/build/css/themes/bootstrap.min.css";
+@import "../node_modules/alertifyjs//build/css/themes/default.min.css";
+
+.alertify-notifier .ajs-message {
+  position: relative !important;
+  top: 0 !important;
+  display: none;
+  transition: 1.5s;
+  opacity: 0 !important;
+  text-shadow: none !important;
+  max-width: 200px !important;
+
+}
+
+.alertify-notifier .ajs-visible {
+  display: block;
+  opacity: 1 !important;
+  animation: shake 1s;
+  transition: 1.5s;
+  font-family: 'Lato', sans-serif !important;
+  border-radius: 5px;
+  font-size: var(--fs-7) !important;
+  font-style: italic;
+  top: 0 !important;
+  right: 200px !important;
+  max-width: 190px !important;
+
+}
+
+.alertify-notifier .ajs-success {
+  background-color: var(--main-color) !important;
+}
+
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-5px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(5px);
+  }
+}
+
+
+:root {
+  --ff-syne: 'Syne', sans-serif;
+
+  --fs-1: 4.8rem;
+  --fs-2: 4.5rem;
+  --fs-3: 4rem;
+  --fs-4: 2.4rem;
+  --fs-5: 2rem;
+  --fs-6: 1.8rem;
+  --fs-7: 1.4rem;
+  --fs-8: 1.2rem;
+
+  --fw-600: 600;
+  --fw-700: 700;
+
+  /* Colors */
+  --main-color: #007574;
+  --raisin-black: hsla(231, 10%, 14%, 1);
+  --roman-silver: hsla(229, 10%, 57%, 1);
+  --eerie-black: hsla(228, 9%, 10%, 1);
+  --black: hsla(0, 0%, 0%, 1);
+  --white: hsla(0, 0%, 100%, 1);
+  --white_a10: hsla(0, 0%, 100%, 0.1);
+  --white_a5: hsla(0, 0%, 100%, 0.05);
+
+
+  /* Transition */
+
+
+  --transition-1: 0.25s ease;
+  --transition-2: 0.5s ease;
+  --cubic-in: cubic-bezier(0.51, 0.03, 0.64, 0.28);
+  --cubic-out: cubic-bezier(0.05, 0.83, 0.52, 0.97);
+  --cubic-bounce: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --cubic-ease-out: 700ms cubic-bezier(0.17, 0.67, 0, 1.01);
+
+
+  /* Spacing */
+
+  --section-padding: 100px;
+
+  /* shaddow */
+
+  --shadow-1: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  /* border */
+
+  --input-border: 1px solid #eee;
+
+
+}
+
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+image,
+a,
+data,
+button,
+ion-icon {
+  display: block;
+}
+
+a {
+  color: #222 !important;
+  text-decoration: none;
+}
+
+image {
+  height: auto;
+}
+
+button {
+  background: none;
+  border: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: 0;
+}
+
+.container {
+  padding: 40px 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 25px 35px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .container {
+    padding: 50px 20px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .container {
+    padding: 50px 20px;
+  }
+}
+
+/*
+@media screen and (max-width: 992px) */
+
+html {
+  font-size: 10px;
+  height: 100%;
+}
+
+body {
+  color: #222;
+  font-size: 1.6rem;
+  line-height: 1.7rem;
+  font-family: 'Lato', sans-serif;
+  position: static !important;
+  overflow: auto !important;
+  margin: 0;
+}
+
+h1 {
+  margin: 0 !important;
+  padding: 0;
+}
+
+.special-heading {
+  font-size: var(--fs-5);
+  width: 100%;
+}
+
+.special-heading span {
+  color: var(--main-color);
+  width: fit-content;
+  display: inline;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+  border-radius: 0px;
+}
+
+.form-group {
+  position: relative;
+  width: 100%;
+  height: 35px;
+  margin-bottom: 20px;
+}
+
+.form-group input {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-bottom: 1px solid #eee;
+  outline: 0px;
+  padding-left: 6px;
+}
+
+.form-group.text label {
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  left: 6px;
+  transform: translateY(-50%);
+  columns: #999;
+  transition: 0.3s;
+  margin-top: 5px;
+}
+
+.form-group input:focus~label,
+.form-group input:valid~label,
+.form-group .ng-touched~label {
+  top: -15px;
+  transition: 0.3s;
+  font-size: 12px;
+
+}
+
+.form-group .ng-touched {
+  border-bottom: 1px solid red;
+}
+
+.form-group .ng-valid {
+  border-bottom: 1px solid #eee;
+
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.buttons button {
+  background-color: var(--main-color);
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: var(fs-7);
+  font-weight: var(--fw-700);
+  cursor: pointer;
+  padding: 10px 25px;
+  border-radius: 5px;
+  margin: 0;
+}
+
+.buttons .submit[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.buttons button:nth-child(2) {
+  position: relative;
+  top: -3px;
+}
+
+.error {
+  color: red;
+  padding: 0;
+  margin: 0;
+
+}
+
+.error p {
+  font-size: var(--fs-8);
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.form-group textarea {
+  width: 400px;
+  height: 100px;
+  resize: none;
+  border: var(--input-border);
+  outline: 0;
+  padding: 5px;
+}
+
+.textarea label {
+  position: relative;
+  z-index: 999;
+  columns: #999;
+  margin-bottom: 15px;
+  display: block;
+  font-size: var(--fs-7);
+}
+
+.form-group textarea::placeholder {
+  color: #999;
+}
+
+
+.info-link span {
+  position: absolute;
+  color: white;
+  background-color: var(--main-color);
+  font-size: var(--fs-8);
+  border-radius: 4px;
+  padding: 7px;
+  top: -40px;
+  left: 50%;
+  transition: 0.3s;
+  transform: translateX(-50%);
+  width: max-content;
+}
+
+.info-link span::before {
+  content: '';
+  position: absolute;
+  border-color: var(--main-color) transparent transparent transparent;
+  border-width: 3px;
+  border-style: solid;
+  top: 100%;
+  left: 50%;
+  transition: 0.3s;
+  transform: translateX(-50%);
+  z-index: 999;
+
+}

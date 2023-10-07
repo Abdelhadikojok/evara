@@ -1,0 +1,56 @@
+.filtering-buttons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-block: 40px;
+  /* justify-content: left; */
+
+}
+
+.filtering-buttons button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  font-size: 1.6rem;
+  transition: .3s;
+}
+
+.filtering-buttons button.active {
+  background-color: #ffe3bc;
+  color: var(--main-color);
+}
+
+.filtering-buttons button:hover {
+  transition: 0.3s;
+  background-color: #ffe3bc;
+  color: var(--main-color);
+}
+
+.shopping-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+
+}
+
+@media screen and (max-width: 350px) {
+  .shopping-container {
+    padding: 30px 20px;
+    justify-content: center;
+  }
+
+  .filtering-buttons button {
+    font-size: var(--fs-8);
+    padding: 7px 15px;
+    height: 40px;
+
+  }
+
+}
+
+@media screen and (max-width: 576px) {
+  .shopping-container {
+    padding: 30px 20px;
+  }
+}

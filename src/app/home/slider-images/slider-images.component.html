@@ -1,0 +1,16 @@
+  <div class="image-slider-container">
+    <div class="slider">
+      <div class="image-slider" [style.transform]="'translateX(' + slideIndex * -222 + 'px)'">
+        <ng-container *ngFor="let category of categories">
+          <div class="category-card">
+            <a [routerLink]="['/shopping']" [queryParams]="{ category: category.name }">
+              <img src="{{category.image}}" alt="">
+              <span>{{category.name}}</span>
+            </a>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <button (click)="prevSlide()" class="slider-button left-button"><ion-icon name="chevron-back-circle"></ion-icon></button>
+    <button (click)="nextSlide()" class="slider-button right-button"><ion-icon name="chevron-forward-circle"></ion-icon></button>
+  </div>

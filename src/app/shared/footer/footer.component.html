@@ -1,0 +1,50 @@
+
+  <div class="discription">
+    <div>
+      <ion-icon name="mail-outline"></ion-icon>
+      <span>Sign Up To Newsletter</span>
+    </div>
+    <div style="font-size: var(--fs-7); color: #555;">Get E-Mail Updates about Our Latest Shope and Special Offers</div>
+  </div>
+
+
+<div class="container">
+  <div class="footer-container">
+    <div class="info-and-social">
+      <img src="../../../assets/logo.svg " alt="">
+      <div class="contact">
+        <span>OUR CONTACTS</span>
+        <div *ngFor="let contact of contacts | keyvalue" class="contacts">
+          <b>{{ contact.key }}</b> : {{ contact.value }}
+        </div>
+        <div class="social-media">
+          <span>Follow Me</span>
+          <div class="social-media-links">
+            <a href="{{socialMediaLinks.facebook}}" class="facebook" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a>
+            <a href="{{socialMediaLinks.instagram}}" class="instegram" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
+            <a href="mailto:{{socialMediaLinks.email}}" class="email" target="_blank"><ion-icon name="mail-outline"></ion-icon></a>
+            <a href="{{socialMediaLinks.linkedIn}}" class="linked-in" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="s">
+      <div class="address">
+        <h1>CUSTOMER CARE</h1>
+        <a appScrollTop routerLink="{{address.value}}" class="links" *ngFor="let address of addresses|keyvalue">{{address.key}}</a>
+      </div>
+      <div class="my-account">
+        <h1>MY ACCOUNT</h1>
+        <a appScrollTop routerLink="{{links.value}}" class="links" *ngFor="let links of myAccount|keyvalue">{{links.key}}</a>
+      </div>
+    </div>
+    <div class="payment">
+      <h1>secured payment gateways</h1>
+      <img src="https://firebasestorage.googleapis.com/v0/b/abdelhadi-ecommerce-app.appspot.com/o/payment-method.png?alt=media&token=42f88a67-23fe-44aa-ab06-e8ecbd361b72&_gl=1*1he1jpt*_ga*MTkzNzQxNDAwNS4xNjg5MzY1NTI5*_ga_CW55HF8NVT*MTY5NjYyMDgxOS4xMDAuMS4xNjk2NjIxMDU2LjQxLjAuMA.." alt="" style="padding-top: 10px;">
+    </div>
+  </div>
+  <div class="copy-right">
+    <p>© 2023 All Rights Reserved</p>
+    <p>developed by Abdelhadi Kojok</p>
+  </div>
+</div>

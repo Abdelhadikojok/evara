@@ -1,0 +1,26 @@
+<div class="container">
+  <h1 class="heading" style="text-align: center;">My Order</h1>
+  <div class="table-container">
+    <table>
+      <tr>
+        <th *ngFor="let row of orderTableHeaders">{{row}}</th>
+      </tr>
+      <tr *ngFor="let order of userOrders">
+        <td data-cell="name">
+          {{order.name}}
+        </td>
+        <td data-cell="date">{{order.date | date}}</td>
+        <td data-cell="item" class="items">
+          <span *ngFor="let item of order.products">{{item.singleItemCount}} <a routerLink="/shopping/item-details/{{item.id}}" style="display: inline;">{{item.name}}</a> , </span>
+        </td>
+        <td data-cell="address">{{order.address}}</td>
+      </tr>
+    </table>
+    <div *ngIf="userOrders.length==0" class="empty-cart">
+      <ion-icon name="cart-outline" class="cart-icon"></ion-icon>
+      <p>No Orders Yet</p>
+      <a routerLink="/shopping" class="complete-shopping">complete shopping</a>
+    </div>
+  </div>
+</div>
+

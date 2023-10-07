@@ -1,0 +1,195 @@
+.details-container {
+  display: flex;
+  gap: 30px;
+}
+
+.hero-image {
+  width: 390px;
+  height: 380px;
+  margin-bottom: 10px;
+
+}
+
+.hero-image img {
+  height: 100%;
+}
+
+.more-images {
+  width: 400px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+}
+
+.more-images img {
+  height: 100%;
+  width: 100px;
+
+}
+
+.heading,
+.price {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 10px;
+}
+
+.details {
+  max-width: 40%;
+}
+
+.heading h1 {
+  font-size: var(--fs-3);
+  font-weight: var(--fw-600);
+  letter-spacing: 2px;
+  padding-bottom: 20px;
+  text-transform: capitalize;
+}
+
+.brand-name span {
+  color: var(--main-color);
+}
+
+
+
+.price p {
+  font-size: var(--fs-4);
+  padding-block: 10px;
+  color: var(--main-color);
+  font-weight: var(--fw-600);
+}
+
+.price p i {
+  padding-right: 3px;
+}
+
+.description {
+  padding-block: 10px;
+  color: #555;
+}
+
+.description>p {
+  line-height: 2.5rem;
+}
+
+.order-info {
+  padding-block: 15px;
+}
+
+.order-info p {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.order-info p ion-icon {
+  color: var(--main-color);
+  font-weight: var(--fw-600);
+  padding-right: 5px;
+}
+
+.add-to-cart {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.add-to-cart input {
+  width: 50px;
+  height: 100%;
+  outline: 0px;
+  border: 1px solid #999;
+  border-radius: 5px;
+}
+
+.add-to-favorite ion-icon {
+  font-size: var(--fs-4);
+}
+
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding-bottom: 20px;
+}
+
+.rating p {
+  margin: 0;
+}
+
+.rating .rating-stars {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+@media screen and (max-width: 760px) {
+  .details-container {
+    gap: 10px;
+  }
+
+  .hero-image {
+    width: 330px;
+    height: 320px;
+
+  }
+
+  .hero-image img {
+    height: 100%;
+  }
+
+  .more-images {
+    width: 340px;
+    gap: 10px;
+
+  }
+}
+
+@media screen and (max-width: 640px) {
+
+  .details {
+    min-width: 100%;
+  }
+
+  .details-container {
+    gap: 10px;
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+
+  .hero-image {
+    width: 70%;
+    height: 300px;
+
+  }
+
+  .hero-image img {
+    height: 100%;
+    width: 100%;
+  }
+
+  .more-images {
+    display: none;
+
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .hero-image {
+    width: 86%;
+    height: 300px;
+
+  }
+
+}
+
+@media screen and (max-width: 350px) {
+  .hero-image {
+    width: 100%;
+    height: 300px;
+  }
+}

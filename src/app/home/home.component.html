@@ -1,0 +1,28 @@
+
+<div class="container">
+  <div class="main-section">
+    <div class="main-content">
+      <span class="title">Hot promotions</span>
+      <div class="discription">
+        Fashion Trending
+        <span>Greate Collection</span>
+      </div>
+      <span class="discount-statment"> Gave more with coupuons & up to 20% off </span>
+      <button class="special-button" (click)="navigateToShop()">
+        SHOP NOW
+      </button>
+    </div>
+    <div class="image">
+      <img src="https://firebasestorage.googleapis.com/v0/b/abdelhadi-ecommerce-app.appspot.com/o/home-img.png?alt=media&token=ec751575-2051-43ca-aba2-09f64865f023&_gl=1*o4zudj*_ga*MTkzNzQxNDAwNS4xNjg5MzY1NTI5*_ga_CW55HF8NVT*MTY5NjYyMDgxOS4xMDAuMS4xNjk2NjIxMDQ4LjQ5LjAuMA.." alt="">
+    </div>
+  </div>
+
+  <div class="category-section">
+    <div class="special-heading" style="padding-bottom: 30px;">
+      Popular <span>Categories</span>
+    </div>
+    <app-slider-images [categories]="categories"></app-slider-images>
+
+    <app-home-shopping-item *ngIf="loggedIn"></app-home-shopping-item>
+  </div>
+</div>

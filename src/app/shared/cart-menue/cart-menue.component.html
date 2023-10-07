@@ -1,0 +1,37 @@
+ <ul class="cart-items" >
+      <li class="cart-header">
+        <p style="font-weight: var(--fw-700); color: black;">ORDER</p>
+        <p style="font-size: var(--fs-8);">Edit Cart</p>
+      </li>
+      <li *ngIf="cartItems.length==0" class="empty-cart">
+        <ion-icon name="cart-outline" class="cart-icon"></ion-icon>
+        <p>cart is empty</p>
+      </li>
+      <div class="cart-item-container">
+        <li *ngFor="let item of cartItems" class="cart-item">
+          <div class="item">
+            <div class="item-image">
+              <img src="{{item.images.imageOne}}" alt="">
+            </div>
+            <div class="item-details">
+              <span class="name">{{item.name}}</span>
+              <span class="category"> {{item.category}} </span>
+            </div>
+          </div>
+          <div class="counter">
+            <button (click)="decrement(item)"><ion-icon name="remove-outline"></ion-icon></button>
+            <div class="counter-number">{{item.singleItemCount}}</div>
+            <button (click)="increment(item)"><ion-icon name="add-outline"></ion-icon></button>
+          </div>
+          <div class="price">
+            <i>$</i>{{item.price}}
+          </div>
+        </li>
+      </div>
+      <li class="total-price">
+        <p>Total</p>
+        <p><i style="padding-right: 3px;">$</i>{{(totalPrice).toFixed(2)}}</p>
+
+      </li>
+      <button (click)="navigateAndClose()" class="cart-link">PROCEED TO CHECKOUT</button>
+    </ul>
