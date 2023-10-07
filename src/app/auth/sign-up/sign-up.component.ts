@@ -24,7 +24,6 @@ export class SignUpComponent {
 
     ngOnInit(): void {
     }
-
     removeError() {
         this.error = ""
     }
